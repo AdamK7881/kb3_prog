@@ -50,11 +50,31 @@ img {
     padding: 3px;
 }
 
-.nav-a {
-    padding-left: 8px;
+#nav a {
+    background-color: rgb(210, 161, 161);
+    padding: 6px;
+    border-radius: 2px;
+    text-decoration: none;
+    border: 2px blue solid;
+    transition: 0.5s;
+    color:black;
+}
+
+#nav a:hover {
+    background-color: rgb(161, 210, 204);
+}
+
+img:hover {
+    width: 600px;
+    transition: 2s;
 }
 
 #nav {
     border: 2px solid black;
     padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(220, 207, 207);
+    position: sticky;
+    top: 0;
 }
