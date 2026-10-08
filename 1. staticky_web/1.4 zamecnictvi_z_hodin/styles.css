@@ -10,6 +10,7 @@ p {
 
 img {
     border-radius: 15px;
+    width: 100px;
 }
 
 .cerny {
@@ -20,7 +21,6 @@ img {
 }
 
 .vpravo {
-    width:100px;
     float: right;
     margin: 12px;
 }
@@ -33,7 +33,6 @@ img {
 }
 
 .vlevo {
-    width:100px;
     float: left;
     margin: 12px;
 }
@@ -65,8 +64,8 @@ img {
 }
 
 img:hover {
-    width: 600px;
-    transition: 2s;
+    width: 110px;
+    transition: 1s;
 }
 
 #nav {
