@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moje stránka</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Horní část -->
+  <header>
+    <h1>Nadpis stránky</h1>
+    <nav>
+      <a href="#">Odkaz 1</a>
+      <a href="#">Odkaz 2</a>
+      <a href="#">Odkaz 3</a>
+    </nav>
+  </header>
+
+  <!-- Hlavní obsah -->
+  <main>
+
+    <section>
+      <h2>Podnadpis</h2>
+      <!--
+        Co jde dát do textu:
+        <b>tučné</b>  <i>kurzíva</i>  <u>podtržené</u>  <mark>zvýrazněné</mark>
+        <br> = nový řádek    <hr> = vodorovná čára
+        <a href="https://seznam.cz">odkaz</a>
+        <span style="color:red">text jiné barvy</span>
+      -->
+      <p>Tady je obyčejný text. Můžeš ho přepsat na cokoliv.</p>
+      <button>Tlačítko</button>
+    </section>
+
+    <!-- Další věci, co můžeš přidat:
+         <video src="video.mp4" controls></video>     video
+         <audio src="hudba.mp3" controls></audio>     zvuk
+         <table> <tr><td>buňka</td></tr> </table>     tabulka
+         <input type="checkbox">                      zaškrtávátko
+         <input type="color">                         výběr barvy
+         <select><option>Možnost</option></select>    rozbalovací menu
+         <div> ... </div>                             obecná krabice na seskupování
+    -->
+
+
+    <section>
+      <h2>Obrázek</h2>
+      <!-- Za src dej cestu ke svému obrázku, např. src="obrazek.png" -->
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23ddd'/%3E%3C/svg%3E" alt="Popis obrázku">
+    </section>
+
+    <section>
+      <h2>Seznam</h2>
+      <ul>
+        <li>První věc</li>
+        <li>Druhá věc</li>
+        <li>Třetí věc</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Formulář</h2>
+      <form>
+        <input type="text" placeholder="Napiš něco">
+        <textarea placeholder="Delší text"></textarea>
+        <button type="submit">Odeslat</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Spodní část -->
+  <footer>
+    <p>Patička stránky</p>
+  </footer>
+
+</body>
+</html>

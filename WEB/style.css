@@ -1,0 +1,190 @@
+/* =====================================================
+   POZNÁMKY: co všechno můžeš přidat
+   Stačí zkopírovat řádek do správné části a upravit.
+   ===================================================== */
+
+/* ---------- ZÁKLAD ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: white;
+  color: black;
+
+  /* POZADÍ - co jde přidat:
+     background: #1a1a1a;                       barva (název, #hex nebo rgb)
+     background: url("obrazek.jpg");            obrázek
+     background-size: cover;                    obrázek přes celou plochu
+     background-repeat: no-repeat;              obrázek se neopakuje
+     background-position: center;               obrázek na střed
+     background-attachment: fixed;              pozadí se při scrollu nehýbe
+     background: linear-gradient(red, blue);    barevný přechod
+  */
+
+  /* TEXT - co jde přidat:
+     font-size: 18px;                velikost písma
+     font-weight: bold;              tučné (nebo 100 až 900)
+     font-style: italic;             kurzíva
+     text-align: center;             zarovnání (left, right, center, justify)
+     text-decoration: underline;     podtržení (none = žádné, line-through = přeškrtnuté)
+     text-transform: uppercase;      VELKÁ písmena (lowercase, capitalize)
+     letter-spacing: 2px;            mezery mezi písmeny
+     line-height: 1.6;               výška řádku
+     font-family: "Courier New", monospace;   jiný font
+     text-shadow: 2px 2px 4px gray;  stín textu
+  */
+}
+
+/* ---------- HORNÍ ČÁST ---------- */
+header {
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+
+  /* Další možnosti:
+     position: sticky; top: 0;       zůstane nahoře při scrollu
+     background: #eee;               barva pozadí
+     display: flex;                  věci vedle sebe
+     justify-content: space-between; rozmístění (center, flex-end ...)
+     align-items: center;            svislé zarovnání
+  */
+}
+
+nav a {
+  margin-right: 15px;
+  color: black;
+
+  /* Další možnosti:
+     text-decoration: none;          bez podtržení
+     font-weight: bold;
+  */
+}
+
+/* Když najedeš myší na odkaz */
+nav a:hover {
+  /* color: red; */
+  /* text-decoration: underline; */
+}
+
+/* ---------- HLAVNÍ OBSAH ---------- */
+main {
+  max-width: 800px;
+  margin: 0 auto;     /* auto = vycentruje na střed */
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 30px;
+
+  /* Další možnosti:
+     background: #f5f5f5;            vlastní pozadí sekce
+     border: 1px solid #ccc;         rámeček (dashed = čárkovaný, 2px = tlustší)
+     border-radius: 10px;            zakulacené rohy
+     box-shadow: 0 2px 8px #0003;    stín okolo
+     padding: 20px;                  vnitřní odsazení
+  */
+}
+
+/* Nadpisy */
+h1, h2 {
+  /* color: darkblue; */
+  /* text-align: center; */
+}
+
+/* Odstavec */
+p {
+  /* line-height: 1.6; */
+  /* color: #444; */
+}
+
+/* ---------- OBRÁZEK ---------- */
+img {
+  max-width: 100%;
+
+  /* Další možnosti:
+     width: 300px;                   pevná šířka
+     height: 200px;                  pevná výška
+     object-fit: cover;              ořízne obrázek, aby nebyl deformovaný
+     border-radius: 50%;             kulatý obrázek
+     border: 3px solid black;        rámeček
+     opacity: 0.5;                   průhlednost (0 až 1)
+     filter: grayscale(100%);        černobílý (blur(5px) = rozmazaný)
+     box-shadow: 0 4px 10px #0005;   stín
+  */
+}
+
+/* ---------- TLAČÍTKO ---------- */
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+
+  /* Další možnosti:
+     background: #333;               barva tlačítka
+     color: white;                   barva textu
+     border: none;                   bez rámečku
+     border-radius: 6px;             zakulacené rohy
+     font-size: 16px;
+     transition: 0.2s;               plynulá změna při najetí myší
+  */
+}
+
+/* Když najedeš myší na tlačítko */
+button:hover {
+  /* background: #555; */
+  /* transform: scale(1.05); */      /* mírně se zvětší */
+}
+
+/* ---------- FORMULÁŘ ---------- */
+input, textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+
+  /* Další možnosti:
+     border: 1px solid #999;
+     border-radius: 6px;
+     font-size: 16px;
+     background: #f9f9f9;
+  */
+}
+
+/* Když do políčka klikneš */
+input:focus, textarea:focus {
+  /* outline: 2px solid blue; */
+}
+
+/* ---------- SEZNAM ---------- */
+ul {
+  /* list-style: none; */            /* bez odrážek (square, circle, decimal = čísla) */
+}
+
+/* ---------- PATIČKA ---------- */
+footer {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+
+  /* background: #eee; */
+}
+
+/* ---------- MOBIL ---------- */
+/* Tohle se použije jen na úzkých displejích (telefon) */
+@media (max-width: 600px) {
+  main {
+    /* padding: 10px; */
+  }
+}
+
+/* ---------- OBECNÉ TŘÍDY ----------
+   V HTML dáš třeba <p class="cervene"> a v CSS:
+
+   .cervene {
+     color: red;
+   }
+
+   Pro jeden konkrétní prvek použij id:
+   <p id="hlavni"> ... #hlavni { color: blue; }
+*/
