@@ -3,6 +3,15 @@
    Stačí zkopírovat řádek do správné části a upravit.
    ===================================================== */
 
+/* ---------- BARVY (změníš je tady na jednom místě) ---------- */
+:root {
+  --modra: #3a6d7e;                 /* modrá: hlavička, nadpisy, patička */
+  --zluta: #ffc933;                 /* žlutá: tlačítka */
+  --zluta-svetla: #ffdc6e;          /* žlutá po najetí myší */
+  --pozadi: #eaf1f8;                /* světle modré pozadí stránky */
+  --text: #1a1a1a;
+}
+
 /* ---------- ZÁKLAD ---------- */
 * {
   box-sizing: border-box;
@@ -11,8 +20,10 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: white;
-  color: black;
+  background: var(--pozadi);
+  color: var(--text);
+  font-size: 20px;                  /* větší text na celém webu */
+  line-height: 1.7;                 /* víc místa mezi řádky */
 
   /* POZADÍ - co jde přidat:
      background: #1a1a1a;                       barva (název, #hex nebo rgb)
@@ -40,43 +51,56 @@ body {
 
 /* ---------- HORNÍ ČÁST ---------- */
 header {
-  padding: 20px;
-  border-bottom: 1px solid #ccc;
+  display: flex;                    /* název vlevo, menu vpravo */
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px 30px;
+  background: var(--modra);
+  box-shadow: 0 2px 8px #0003;
 
   /* Další možnosti:
      position: sticky; top: 0;       zůstane nahoře při scrollu
-     background: #eee;               barva pozadí
-     display: flex;                  věci vedle sebe
-     justify-content: space-between; rozmístění (center, flex-end ...)
-     align-items: center;            svislé zarovnání
   */
 }
 
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;                         /* mezery mezi odkazy */
+}
+
 nav a {
-  margin-right: 15px;
-  color: black;
+  font-size: 17px;
+  background: var(--zluta);         /* barva tlačítek v menu */
+  color: var(--modra);
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: 0.2s;
 
   /* Další možnosti:
-     text-decoration: none;          bez podtržení
      font-weight: bold;
   */
 }
 
 /* Když najedeš myší na odkaz */
 nav a:hover {
-  /* color: red; */
-  /* text-decoration: underline; */
+  background: var(--zluta-svetla);  /* světlejší po najetí myší */
 }
 
 /* ---------- HLAVNÍ OBSAH ---------- */
 main {
-  max-width: 800px;
+  max-width: 1000px;                /* širší obsah */
   margin: 0 auto;     /* auto = vycentruje na střed */
-  padding: 20px;
+  padding: 40px 20px;
 }
 
 section {
-  margin-bottom: 30px;
+  padding: 35px 0;                  /* žádné karty, text přímo na stránce */
+  border-bottom: 1px solid #b9cde0; /* tenká čára mezi sekcemi */
 
   /* Další možnosti:
      background: #f5f5f5;            vlastní pozadí sekce
@@ -87,9 +111,20 @@ section {
   */
 }
 
+/* Poslední sekce bez čáry */
+section:last-child {
+  border-bottom: none;
+}
+
 /* Nadpisy */
+h2 {
+  font-size: 2.2rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
 h1, h2 {
-  /* color: darkblue; */
+  color: var(--modra);
   /* text-align: center; */
 }
 
@@ -117,8 +152,15 @@ img {
 
 /* ---------- TLAČÍTKO ---------- */
 button {
-  padding: 8px 16px;
+  padding: 12px 26px;
+  font-size: 18px;
   cursor: pointer;
+  background: var(--zluta);         /* stejná barva jako menu */
+  color: var(--modra);
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  transition: 0.2s;
 
   /* Další možnosti:
      background: #333;               barva tlačítka
@@ -132,7 +174,7 @@ button {
 
 /* Když najedeš myší na tlačítko */
 button:hover {
-  /* background: #555; */
+  background: var(--zluta-svetla);
   /* transform: scale(1.05); */      /* mírně se zvětší */
 }
 
@@ -157,7 +199,12 @@ input:focus, textarea:focus {
 }
 
 /* ---------- SEZNAM ---------- */
+li {
+  margin-bottom: 8px;
+}
+
 ul {
+  padding-left: 25px;
   /* list-style: none; */            /* bez odrážek (square, circle, decimal = čísla) */
 }
 
@@ -165,9 +212,8 @@ ul {
 footer {
   padding: 20px;
   text-align: center;
-  border-top: 1px solid #ccc;
-
-  /* background: #eee; */
+  background: var(--modra);
+  color: white;
 }
 
 /* ---------- MOBIL ---------- */
@@ -188,3 +234,106 @@ footer {
    Pro jeden konkrétní prvek použij id:
    <p id="hlavni"> ... #hlavni { color: blue; }
 */
+
+/* ---------- TABULKA (jídelní lístek) ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 14px 10px;
+  border-bottom: 1px solid #999;
+}
+
+/* ---------- MAPA ---------- */
+iframe {
+  width: 100%;
+  height: 450px;
+  border: 1px solid #999;
+}
+
+/* ---------- HLAVNÍ OBRÁZEK (hero na úvodní stránce) ---------- */
+.hero {
+  position: relative;
+  height: 100vh;                    /* výška = celá obrazovka */
+}
+
+/* Úvodní stránka: vlastní skupina tlačítek (ne header), leží přes fotku */
+.menu-uvod {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  z-index: 10;
+}
+
+@media (max-width: 600px) {
+  .menu-uvod {
+    left: 15px;
+    right: 15px;
+    justify-content: center;
+  }
+}
+
+/* Obrázek vyplní celý hero */
+.hero img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;                /* ořízne obrázek, aby nebyl deformovaný */
+  object-position: 53% center;      /* kniha zůstane na stejném místě i na mobilu */
+  display: block;
+}
+
+/* Název je přes obrázek, uprostřed */
+.hero h1 {
+  position: absolute;
+  top: 50%;
+  left: 53%;                        /* kniha je na fotce asi 53 % zleva */
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+  margin: 0;
+  color: white;
+  font-size: 4rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* Název vlevo v hlavičce */
+.logo {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  body {
+    font-size: 18px;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  section {
+    padding: 25px 0;
+  }
+
+  header {
+    flex-direction: column;         /* na mobilu pod sebe */
+    padding: 15px;
+  }
+
+
+  .logo {
+    font-size: 1.8rem;
+  }
+}
